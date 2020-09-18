@@ -4,7 +4,7 @@
 public class Main {
     // Driver method to test above
     public static void main(String[] args) {
-        BinarySearch object = new BinarySearch();
+        Algorithm myAlgorithm = new Algorithm();
 
         int[] myArray = {2, 3, 4, 10, 40};
 
@@ -12,7 +12,7 @@ public class Main {
 
         int target = 3;
 
-        int result = object.BinarySearcher(myArray, 0, lengthOfArray - 1, target);
+        int result = myAlgorithm.BinarySearch(myArray, 0, lengthOfArray - 1, target);
 
         if (result == -1)
             System.out.println("Element not found");

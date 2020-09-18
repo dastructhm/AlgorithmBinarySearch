@@ -1,5 +1,4 @@
 class Algorithm {
-
     int BinarySearch(int[] myArray, int IndexOfMinNumber, int IndexOfMaxNumber, int targetNumber) {
         if (IndexOfMaxNumber >= IndexOfMinNumber) {
             int IndexIfMidNumber = IndexOfMinNumber + (IndexOfMaxNumber - IndexOfMinNumber) / 2;
@@ -12,8 +11,6 @@ class Algorithm {
 
             return BinarySearch(myArray, IndexIfMidNumber + 1, IndexOfMaxNumber, targetNumber);
         }
-
-        // We reach here when element is not present in array
         return -1;
     }
 }

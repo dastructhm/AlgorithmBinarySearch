@@ -1,19 +1,16 @@
 class Algorithm {
 
-    int BinarySearch(int[] myArray, int leftBorder, int rightBorder, int target) {
-        if (rightBorder >= leftBorder) {
-            int middle = leftBorder + (rightBorder - leftBorder) / 2;
+    int BinarySearch(int[] myArray, int IndexOfMinNumber, int IndexOfMaxNumber, int targetNumber) {
+        if (IndexOfMaxNumber >= IndexOfMinNumber) {
+            int IndexIfMidNumber = IndexOfMinNumber + (IndexOfMaxNumber - IndexOfMinNumber) / 2;
 
-            // 元素在中间点
-            if (myArray[middle] == target)
-                return middle;
+            if (myArray[IndexIfMidNumber] == targetNumber)
+                return IndexIfMidNumber;
 
-            // If element is smaller than mid, then it can only be present in left sub-array
-            if (myArray[middle] > target)
-                return BinarySearch(myArray, leftBorder, middle - 1, target);
+            if (myArray[IndexIfMidNumber] > targetNumber)
+                return BinarySearch(myArray, IndexOfMinNumber, IndexIfMidNumber - 1, targetNumber);
 
-            // Else the element can only be present in right sub-array
-            return BinarySearch(myArray, middle + 1, rightBorder, target);
+            return BinarySearch(myArray, IndexIfMidNumber + 1, IndexOfMaxNumber, targetNumber);
         }
 
         // We reach here when element is not present in array

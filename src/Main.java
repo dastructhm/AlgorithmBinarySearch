@@ -9,7 +9,7 @@ public class Main {
         Algorithm myAlgorithm = new Algorithm(); // 实例化出来一个对象myAlgorithm
         int IndexOfTargetNumber = myAlgorithm.BinarySearch(myArray, 0, lengthOfMyArray - 1, targetNumber);
 
-        if (IndexOfTargetNumber == -1)
+        if (IndexOfTargetNumber == 0)
             System.out.println("The target number is not in the array.");
         else
             System.out.println("The target number was found at Index " + IndexOfTargetNumber);

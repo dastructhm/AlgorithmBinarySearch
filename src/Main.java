@@ -5,7 +5,7 @@ public class Main {
         int lengthOfMyArray = myArray.length;
         System.out.println("The length of my array is " + lengthOfMyArray);
 
-        int targetNumber = 4; // 查找的目标:数字7
+        int targetNumber = 3; // 查找的目标:数字7
 
         Algorithm myAlgorithm = new Algorithm(); // 实例化出来一个对象myAlgorithm
         int IndexOfTargetNumber = myAlgorithm.BinarySearch(myArray, 0, lengthOfMyArray - 1, targetNumber);

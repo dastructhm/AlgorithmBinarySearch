@@ -4,15 +4,16 @@ class Algorithm {
     int BinarySearch(int[] myArray, int IndexOfMinNumber, int IndexOfMaxNumber, int targetNumber) {
         NumberOfSearchesPerformed++; // 调用了一次方法，搜索了一次，所以NumberOfSearchesPerformed+1
 
-        if (IndexOfMaxNumber >= IndexOfMinNumber) { // 16 >= 0
-            int IndexOfMidNumber = IndexOfMinNumber + (IndexOfMaxNumber - IndexOfMinNumber) / 2;
-
+        if (IndexOfMaxNumber >= IndexOfMinNumber) { // the remaining half Not empty; 16>=0; 7>=0;
+            int IndexOfMidNumber = IndexOfMinNumber + (IndexOfMaxNumber - IndexOfMinNumber) / 2; // 8;
+            System.out.println("Index of Middle Number: " + IndexOfMidNumber);
             if (myArray[IndexOfMidNumber] == targetNumber){ // 找到目标数字
                 System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
                 return IndexOfMidNumber; // 返回目标数字的index
             }
 
-            if (myArray[IndexOfMidNumber] > targetNumber) // 再次调用BinarySearch方法
+            if (myArray[IndexOfMidNumber] > targetNumber)
+                // 再次调用BinarySearch方法; 中间值的索引-1，成为新的最大值的索引
                 return BinarySearch(myArray, IndexOfMinNumber, IndexOfMidNumber - 1, targetNumber);
 
             System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);

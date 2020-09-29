@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        int[] myArray = {1, 3, 4, 6, 7, 8, 10, 13, 14, 18, 19, 21, 24, 37, 40, 45, 71}; // 创建一个数组
+        int[] myArray = {1, 3, 4, 6, 7, 8, 10, 13, 14, 18, 19, 21, 24, 37, 40, 45, 71}; // 创建一个有17个元素的数组
         int lengthOfMyArray = myArray.length; // 获得数组的长度；
         System.out.println("The length of my array is " + lengthOfMyArray);
 

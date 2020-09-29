@@ -4,24 +4,24 @@ class Algorithm {
     int BinarySearch(int[] myArray, int LeftIndex, int RightIndex, int targetValue) {
         NumberOfSearchesPerformed++; // 调用了一次方法，搜索了一次，所以NumberOfSearchesPerformed+1
 
-        if (RightIndex >= LeftIndex) { // the remaining half Not empty;
-            int IndexOfMidNumber = LeftIndex + (RightIndex - LeftIndex) / 2;
-            System.out.println("Current Middle Index: " + IndexOfMidNumber); // 显示中间值的索引
+        if (RightIndex >= LeftIndex) { // the remaining half Not empty; LeftIndex和RightIndex不重合
+            int MidIndex = LeftIndex + (RightIndex - LeftIndex) / 2; // 注意不要写成(LeftIndex-RightIndex) / 2
+            System.out.println("Current Middle Index: " + MidIndex); // 显示中间值的索引
 
-            if (myArray[IndexOfMidNumber] == targetValue){ // 找到目标数字
+            if (myArray[MidIndex] == targetValue){ // 找到目标数字
                 System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
-                return IndexOfMidNumber; // 返回目标数字的index
+                return MidIndex; // 返回目标数字的index
             }
 
-            if (myArray[IndexOfMidNumber] > targetValue) {
+            if (myArray[MidIndex] > targetValue) {
+                System.out.print("After Search "  + NumberOfSearchesPerformed + ", current Right Index: " + (MidIndex - 1) + " ");
                 // 再次调用BinarySearch方法; 中间值的索引-1，成为新的最大值的索引；最小值的索引不变
-                System.out.println("After Search "  + NumberOfSearchesPerformed + ", current Right Index: " + (IndexOfMidNumber - 1));
-                return BinarySearch(myArray, LeftIndex, IndexOfMidNumber - 1, targetValue);
+                return BinarySearch(myArray, LeftIndex, MidIndex - 1, targetValue); // -1是因为MidIndex不是目标的Index
             }
 
             // 再次调用BinarySearch方法; 中间值的索引+1，成为新的最小值的索引；最大值的索引不变
-            System.out.println("After Search "  + NumberOfSearchesPerformed + ", Current New Left Index: " + (IndexOfMidNumber + 1));
-            return BinarySearch(myArray, IndexOfMidNumber + 1, RightIndex, targetValue);
+            System.out.print("After Search "  + NumberOfSearchesPerformed + ", current Left Index: " + (MidIndex + 1)  + " ");
+            return BinarySearch(myArray, MidIndex + 1, RightIndex, targetValue);
         }
         else
             return -1; // 查找结束，且没有返回IndexOfMidNumber,也就是目标数字不在数组中

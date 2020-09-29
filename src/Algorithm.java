@@ -18,7 +18,6 @@ class Algorithm {
                 System.out.println("Current Index of New Max Number: " + (IndexOfMidNumber - 1));
                 return BinarySearch(myArray, LeftIndex, IndexOfMidNumber - 1, targetValue);
             }
-            System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
 
             // 再次调用BinarySearch方法; 中间值的索引+1，成为新的最小值的索引；最大值的索引不变
             System.out.println("Current Index of New Min Number: " + (IndexOfMidNumber + 1));

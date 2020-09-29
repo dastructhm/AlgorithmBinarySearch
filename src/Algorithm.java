@@ -7,9 +7,9 @@ class Algorithm {
         if (IndexOfMaxNumber >= IndexOfMinNumber) { // 16 >= 0
             int IndexOfMidNumber = IndexOfMinNumber + (IndexOfMaxNumber - IndexOfMinNumber) / 2;
 
-            if (myArray[IndexOfMidNumber] == targetNumber){
+            if (myArray[IndexOfMidNumber] == targetNumber){ // 找到目标数字
                 System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
-                return IndexOfMidNumber;
+                return IndexOfMidNumber; // 返回目标数字的index
             }
 
             if (myArray[IndexOfMidNumber] > targetNumber) // 再次调用BinarySearch方法

@@ -6,7 +6,7 @@ class Algorithm {
 
         if (RightIndex >= LeftIndex) { // the remaining half Not empty;
             int IndexOfMidNumber = LeftIndex + (RightIndex - LeftIndex) / 2;
-            System.out.println("Current Index of Middle Number: " + IndexOfMidNumber); // 显示中间值的索引
+            System.out.println("Current Middle Index: " + IndexOfMidNumber); // 显示中间值的索引
 
             if (myArray[IndexOfMidNumber] == targetValue){ // 找到目标数字
                 System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
@@ -15,12 +15,12 @@ class Algorithm {
 
             if (myArray[IndexOfMidNumber] > targetValue) {
                 // 再次调用BinarySearch方法; 中间值的索引-1，成为新的最大值的索引；最小值的索引不变
-                System.out.println("Current Index of New Max Number: " + (IndexOfMidNumber - 1));
+                System.out.println("After Search "  + NumberOfSearchesPerformed + ", current Right Index: " + (IndexOfMidNumber - 1));
                 return BinarySearch(myArray, LeftIndex, IndexOfMidNumber - 1, targetValue);
             }
 
             // 再次调用BinarySearch方法; 中间值的索引+1，成为新的最小值的索引；最大值的索引不变
-            System.out.println("Current Index of New Min Number: " + (IndexOfMidNumber + 1));
+            System.out.println("After Search "  + NumberOfSearchesPerformed + ", Current New Left Index: " + (IndexOfMidNumber + 1));
             return BinarySearch(myArray, IndexOfMidNumber + 1, RightIndex, targetValue);
         }
         else

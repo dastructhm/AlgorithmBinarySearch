@@ -2,7 +2,7 @@ class Algorithm {
     int NumberOfSearchesPerformed = 0; // 记录搜索的次数
 
     int BinarySearch(int[] myArray, int IndexOfMinNumber, int IndexOfMaxNumber, int targetNumber) {
-        NumberOfSearchesPerformed++; // 搜索了一次，所以+1
+        NumberOfSearchesPerformed++; // 调用了一次方法，搜索了一次，所以NumberOfSearchesPerformed+1
 
         if (IndexOfMaxNumber >= IndexOfMinNumber) { // 16 >= 0
             int IndexOfMidNumber = IndexOfMinNumber + (IndexOfMaxNumber - IndexOfMinNumber) / 2;
@@ -19,6 +19,6 @@ class Algorithm {
             return BinarySearch(myArray, IndexOfMidNumber + 1, IndexOfMaxNumber, targetNumber);
         }
         else
-            return -1;
+            return -1; // 查找结束，且没有返回IndexOfMidNumber,也就是目标数字不在数组中
     }
 }

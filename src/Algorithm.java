@@ -1,15 +1,18 @@
 class Algorithm {
+    int TimeComplexity = 0;
+
     int BinarySearch(int[] myArray, int IndexOfMinNumber, int IndexOfMaxNumber, int targetNumber) {
-        if (IndexOfMaxNumber >= IndexOfMinNumber) {
-            int IndexIfMidNumber = IndexOfMinNumber + (IndexOfMaxNumber - IndexOfMinNumber) / 2;
+        if (IndexOfMaxNumber >= IndexOfMinNumber) { // 16 >= 0
+            int IndexOfMidNumber = IndexOfMinNumber + (IndexOfMaxNumber - IndexOfMinNumber) / 2;
 
-            if (myArray[IndexIfMidNumber] == targetNumber)
-                return IndexIfMidNumber;
+            if (myArray[IndexOfMidNumber] == targetNumber)
+                return IndexOfMidNumber;
 
-            if (myArray[IndexIfMidNumber] > targetNumber)
-                return BinarySearch(myArray, IndexOfMinNumber, IndexIfMidNumber - 1, targetNumber);
+            if (myArray[IndexOfMidNumber] > targetNumber) // 再次调用BinarySearch方法
+                return BinarySearch(myArray, IndexOfMinNumber, IndexOfMidNumber - 1, targetNumber);
 
-            return BinarySearch(myArray, IndexIfMidNumber + 1, IndexOfMaxNumber, targetNumber);
+            // 再次调用BinarySearch方法
+            return BinarySearch(myArray, IndexOfMidNumber + 1, IndexOfMaxNumber, targetNumber);
         }
         return -1;
     }

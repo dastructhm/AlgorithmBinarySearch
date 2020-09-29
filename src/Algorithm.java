@@ -15,7 +15,7 @@ class Algorithm {
 
             if (myArray[IndexOfMidNumber] > targetNumber) {
                 // 再次调用BinarySearch方法; 中间值的索引-1，成为新的最大值的索引；最小值的索引不变
-                System.out.println("Current Index of Max Number: " + (IndexOfMidNumber - 1));
+                System.out.println("Current Index of New Max Number: " + (IndexOfMidNumber - 1));
                 return BinarySearch(myArray, IndexOfMinNumber, IndexOfMidNumber - 1, targetNumber);
             }
             System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);

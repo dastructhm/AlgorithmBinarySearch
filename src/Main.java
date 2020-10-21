@@ -5,7 +5,9 @@ public class Main {
 
         System.out.println("The length of my array is " + myArray.length);
 
-        int targetNumber = 7;
+        // int targetNumber = 7;
+        SetTargetNumber myTargetNumber = new SetTargetNumber();
+        int targetNumber = myTargetNumber.ReadInTargetNumber();
 
         // 实例化出来一个对象myAlgorithm
         Algorithm myAlgorithm = new Algorithm();

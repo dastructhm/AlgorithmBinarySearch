@@ -10,6 +10,4 @@ public class SetArrayElements {
             myArray[i] = UserInput.nextInt();
         }
     }
-
-
 }

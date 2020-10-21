@@ -15,8 +15,9 @@ class Algorithm {
 
             // 找到目标数字
             if (myArray[MidIndex] == targetValue){
-                System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
                 // 返回目标数字的index
+                System.out.println("After Search "  + NumberOfSearchesPerformed + ", current Left Index: " + (MidIndex + 1)  + " ");
+                System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
                 return MidIndex;
             }
 

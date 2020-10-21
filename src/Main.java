@@ -1,5 +1,4 @@
-
-// int[] myArray = {1, 3, 4, 6, 7, 8, 10, 13, 14, 18, 19, 21, 24, 37, 40, 45, 71};
+@SuppressWarnings("InfiniteLoopStatement")
 
 public class Main {
     public static void main(String[] args) {
@@ -24,5 +23,5 @@ public class Main {
         // 实例化出来一个对象myResult
         SearchResult myResult = new SearchResult();
         myResult.PrintSearchResult(IndexOfTargetNumber);
-    }
+        }
 }

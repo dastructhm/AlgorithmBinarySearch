@@ -1,10 +1,7 @@
-@SuppressWarnings("InfiniteLoopStatement")
-
 public class Main {
     public static void main(String[] args) {
         SetArrayLength myArrayLength = new SetArrayLength();
         int arrayLength = myArrayLength.SetMyArrayLength();
-        System.out.println("The length of my array is " + arrayLength);
 
         int[] myArray = new int[arrayLength];
 

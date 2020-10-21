@@ -8,7 +8,6 @@ public class SetArrayElements {
             System.out.print("Please enter element " + i + ": ");
             Scanner UserInput = new Scanner(System.in);
             myArray[i] = UserInput.nextInt();
-            System.out.println("You entered: " + myArray[i]);
         }
     }
 

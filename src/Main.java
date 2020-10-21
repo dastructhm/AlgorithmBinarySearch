@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 // int[] myArray = {1, 3, 4, 6, 7, 8, 10, 13, 14, 18, 19, 21, 24, 37, 40, 45, 71};
 
 public class Main {
@@ -9,12 +9,8 @@ public class Main {
 
         int[] myArray = new int[arrayLength];
 
-        for(int i = 0; i < arrayLength; i++) {
-            Scanner UserInput = new Scanner(System.in);
-            myArray[i] = UserInput.nextInt();
-        }
-
-
+        SetArrayElements myElements = new SetArrayElements();
+        myElements.SetElements(arrayLength, myArray);
 
         SetTargetNumber myTargetNumber = new SetTargetNumber();
         int targetNumber = myTargetNumber.ReadInTargetNumber();

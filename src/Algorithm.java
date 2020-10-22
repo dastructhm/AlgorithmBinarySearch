@@ -1,4 +1,4 @@
-// int[] myArray = {6, 7, 8, 9, 10};
+// int[] myArray = {5, 88, 220};
 // int[] myArray = {1, 3, 4, 6, 7, 8, 10, 13, 14, 18, 19, 21, 24, 37, 40, 45, 71};
 
 class Algorithm {
@@ -11,34 +11,33 @@ class Algorithm {
 
         // the remaining half Not empty; LeftIndex和RightIndex不重合
         if (RightIndex >= LeftIndex) {
-            // 注意不要写成(LeftIndex-RightIndex) / 2
             int MidIndex = LeftIndex + (RightIndex - LeftIndex) / 2;
             // 打印中间值的索引
-            System.out.println("Current Middle Index: " + MidIndex);
+            System.out.println("Middle Index: " + MidIndex);
 
-            // 找到目标数字
+            // 中间值等于目标值
             if (myArray[MidIndex] == targetValue){
-                // 返回目标数字的index
-                System.out.println("After Search "  + NumberOfSearchesPerformed + ", current Left Index: " + (MidIndex + 1)  + " ");
+                // 返回目标值的下标
+                System.out.println("After Search "  + NumberOfSearchesPerformed + ", Left Index: " + (MidIndex)  + " ");
                 System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
                 return MidIndex;
             }
 
-            // 目标值在中间值左边
+            // 中间值大了
             if (myArray[MidIndex] > targetValue) {
-                System.out.print("After Search "  + NumberOfSearchesPerformed + ", current Right Index: " + (MidIndex - 1) + " ");
+                System.out.println("After Search "  + NumberOfSearchesPerformed + ", Right Index: " + (MidIndex) + " ");
                 // 再次调用BinarySearch方法; 中间值的索引-1，成为新的最大值的索引；最小值的索引不变
                 return BinarySearch(myArray, LeftIndex, MidIndex - 1, targetValue); // -1是因为MidIndex不是目标的Index
             }
 
-            System.out.println("After Search "  + NumberOfSearchesPerformed + ", current Left Index: " + (MidIndex + 1)  + " ");
+            System.out.println("After Search "  + NumberOfSearchesPerformed + ", Left Index: " + (MidIndex)  + " ");
             // 目标值在中间值右边
             // 再次调用BinarySearch方法; 中间值的索引+1，成为新的最小值的索引；最大值的索引不变
             return BinarySearch(myArray, MidIndex + 1, RightIndex, targetValue);
         }
         // the remaining half is now empty; LeftIndex和RightIndex重合
         else
-            // 查找结束，且没有返回IndexOfMidNumber,也就是目标数字不在数组中
-            return 0;
+            // 查找结束
+            return 1;
     }
 }

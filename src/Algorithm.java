@@ -24,7 +24,7 @@ class Algorithm {
             SearchesPerformed++;
             return BinarySearch(myArray, MidIndex + 1, RightIndex, targetValue);
         }
-        // 查找结束
+        // 左界和右界重合，且数组中没有目标值
         else
             return -1;
     }

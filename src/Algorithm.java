@@ -3,32 +3,28 @@
 
 class Algorithm {
     // 记录搜索的次数
-    int NumberOfSearchesPerformed = 0;
+    int NumberOfSearchesPerformed = 1;
 
     int BinarySearch(int[] myArray, int LeftIndex, int RightIndex, int targetValue) {
-        // 调用了一次方法，搜索了一次，所以NumberOfSearchesPerformed + 1
-        NumberOfSearchesPerformed++;
 
         // the remaining half Not empty; LeftIndex和RightIndex不重合
         if (LeftIndex <= RightIndex) {
-            int MidIndex = LeftIndex + (RightIndex - LeftIndex) / 2;
-            System.out.println("Middle Index: " + MidIndex);
+            int MidIndex = (LeftIndex + RightIndex) / 2;
+            System.out.println("Search " + NumberOfSearchesPerformed + ": " + "Left = " + LeftIndex+ " Middle = " + MidIndex + " Right = " + RightIndex);
 
             if (myArray[MidIndex] == targetValue){
                 // 返回目标值的下标
-                System.out.println("After Search "  + NumberOfSearchesPerformed + ", Left Index: " + (MidIndex)  + " ");
-                System.out.println("Number Of Searches Performed: " + NumberOfSearchesPerformed);
+                System.out.println("Searches Performed: " + NumberOfSearchesPerformed);
                 return MidIndex;
             }
 
             else if (myArray[MidIndex] > targetValue) {
-                System.out.println("After Search "  + NumberOfSearchesPerformed + ", Right Index: " + (MidIndex) + " ");
+                System.out.println("Search "  + NumberOfSearchesPerformed + ", Right = " + (MidIndex) + " ");
                 // 再次调用BinarySearch方法; 中间值的索引-1，成为新的最大值的索引；最小值的索引不变
                 return BinarySearch(myArray, LeftIndex, MidIndex - 1, targetValue); // -1是因为MidIndex不是目标的Index
             }
 
-            System.out.println("After Search "  + NumberOfSearchesPerformed + ", Left Index: " + (MidIndex)  + " ");
-
+            NumberOfSearchesPerformed++;
             return BinarySearch(myArray, MidIndex + 1, RightIndex, targetValue);
         }
         // the remaining half is now empty; LeftIndex和RightIndex重合

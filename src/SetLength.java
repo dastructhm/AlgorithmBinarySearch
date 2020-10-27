@@ -1,4 +1,5 @@
 import java.util.Scanner;
+// 导入java.util中的Scanner类
 
 public class SetLength {
     int SetMyArrayLength(){

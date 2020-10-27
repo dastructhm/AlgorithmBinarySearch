@@ -12,22 +12,20 @@ class Algorithm {
             System.out.println("Search " + NumberOfSearchesPerformed + ": " + "Left = " + LeftIndex+ " Middle = " + MidIndex + " Right = " + RightIndex);
 
             if (myArray[MidIndex] == targetValue){
-                // 返回目标值的下标
                 System.out.println("Searches Performed: " + NumberOfSearchesPerformed);
                 return MidIndex;
             }
 
             else if (myArray[MidIndex] > targetValue) {
                 NumberOfSearchesPerformed++;
-                return BinarySearch(myArray, LeftIndex, MidIndex - 1, targetValue); // -1是因为MidIndex不是目标的Index
+                return BinarySearch(myArray, LeftIndex, MidIndex - 1, targetValue);
             }
 
             NumberOfSearchesPerformed++;
             return BinarySearch(myArray, MidIndex + 1, RightIndex, targetValue);
         }
-        // the remaining half is now empty; LeftIndex和RightIndex重合
+        // 查找结束
         else
-            // 查找结束
             return -1;
     }
 }

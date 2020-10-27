@@ -19,7 +19,6 @@ class Algorithm {
             }
 
             else if (myArray[MidIndex] > targetValue) {
-                System.out.println("Search "  + NumberOfSearchesPerformed + ", Right = " + (MidIndex) + " ");
                 // 再次调用BinarySearch方法; 中间值的索引-1，成为新的最大值的索引；最小值的索引不变
                 return BinarySearch(myArray, LeftIndex, MidIndex - 1, targetValue); // -1是因为MidIndex不是目标的Index
             }

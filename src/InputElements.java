@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SetArrayElements {
+public class InputElements {
     void SetElements(int arrayLength, int[] myArray){
         for(int i = 0; i < arrayLength; i++) {
             System.out.print("Please enter element " + i + ": ");

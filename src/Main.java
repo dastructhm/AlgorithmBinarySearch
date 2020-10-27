@@ -1,14 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        SetArrayLength myArrayLength = new SetArrayLength();
+        SetLength myArrayLength = new SetLength();
         int arrayLength = myArrayLength.SetMyArrayLength();
 
         int[] myArray = new int[arrayLength];
 
-        SetArrayElements myElements = new SetArrayElements();
+        InputElements myElements = new InputElements();
         myElements.SetElements(arrayLength, myArray);
 
-        SetTargetNumber myTargetNumber = new SetTargetNumber();
+        SetTarget myTargetNumber = new SetTarget();
         int targetNumber = myTargetNumber.ReadInTargetNumber();
 
         // 实例化出来一个对象myAlgorithm

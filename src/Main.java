@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        // x和y都是int，向下取整
+        // x和y都是int时，向下取整
         // int x = 0;
         // int y = 3;
         // int z = (x+y)/2;

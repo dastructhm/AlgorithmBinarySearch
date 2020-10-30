@@ -7,7 +7,7 @@ class Algorithm {
         // 左界和右界不重合
         if (LeftIndex <= RightIndex) {
             int MidIndex = (LeftIndex + RightIndex) / 2;
-            System.out.println("Search " + SearchesPerformed + ": " + "Left = " + LeftIndex+ " Middle = " + MidIndex + " Right = " + RightIndex);
+            System.out.println("Search " + SearchesPerformed + ": " + "Left = " + LeftIndex + " Middle = " + MidIndex + " Right = " + RightIndex);
 
             if (myArray[MidIndex] == targetValue){
                 System.out.println("Searches Performed: " + SearchesPerformed);
@@ -29,3 +29,5 @@ class Algorithm {
             return -1;
     }
 }
+
+
